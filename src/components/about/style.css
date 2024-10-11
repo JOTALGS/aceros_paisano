@@ -1,0 +1,15 @@
+.about {
+    margin-top: 100vh;
+    height: 500vh;
+    margin-right: auto;
+    margin-left: auto;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    position: relative;
+    z-index: 2;
+    background-color: rgb(19, 18, 18);
+    background-image: url('/images/backgroundAbout.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the section */
+    background-position: center; /* Centers the background image */
+    background-attachment: fixed;
+}
