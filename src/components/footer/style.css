@@ -1,0 +1,35 @@
+.site-footer {
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    height: 30vh;
+  }
+  
+  .footer-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .footer-logo {
+    flex: 1; /* Left column for the image */
+  }
+  
+  .footer-logo img {
+    width: 350px; /* Adjust size as needed */
+    height: auto;
+    margin-left: 50px;
+  }
+  
+  .footer-content {
+    flex: 2; /* Right side for text content */
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .contact-info, .contact-details {
+    display: flex;
+    flex-direction: column;
+  }
+  

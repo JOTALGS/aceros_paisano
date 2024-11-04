@@ -35,14 +35,37 @@ export const Home = () => {
 
   return (
     <section id="home" className="home">
-      <div className="home-container"></div>
-      <div className="transparent-section"></div>
-      <div className="home-container"></div>
+      {/* Initial webpage mask animation */}
+      <div className="init-baseline">
+        <div className="init-title">
+          <img src="./images/titulo.jpg" alt="title" className="img-title" />
+        </div>
+        <div className="baseline-start">
+        </div>
+      </div>
 
-      {/* Div that follows the viewport */}
+      {/* Container for the home section */}
+      <div className="home-container">
+        <div className="home-welcome">
+          <h1 className="home-title">Fabricamos aceros de la más alta calidad</h1>
+          <h2 className="home-subtitle">Garantizamos resistencia y durabilidad</h2>
+          <div className="divider"></div>
+          <p className="home-text">
+            Nuestro equipo de profesionales altamente capacitados está siempre dispuesto a asesorar y ayudar a nuestros clientes a encontrar la solución de acero que mejor se adapte a sus necesidades.
+          </p>
+        </div>
+        <div className="home-bottom-row">
+          <p>Google Maps Content Here</p>
+        </div>
+      </div>
+      <div className="transparent-section"></div>
+
+      {/* 
+      Div that follows the viewport
       <div className="follow-div">
         <SteelSheet />
       </div>
+       */}
     </section>
   );
 };

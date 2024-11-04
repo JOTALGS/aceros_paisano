@@ -2,10 +2,12 @@
 .site__header {
   position: relative;
   display: flex;
+  height: 9vh;
   padding: 10px;
   padding-left: 15vw;
   padding-right: 20vw;
-  background-color: rgb(238, 0, 0);
+  background-color: rgb(184, 8, 8);
+  z-index: 1;
 }
 
 .container_header {
@@ -14,8 +16,14 @@
   width: 100%;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
 .logo-container img {
   height: 40px;
+  align-items: center;
 }
 
 .navlink {

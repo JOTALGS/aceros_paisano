@@ -3,14 +3,12 @@ import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import { NavBar } from "./components/header";
 import { Home } from "./components/home";
-import NewsletterSubscription from "./components/newsletter/PopUp";
-import NewAgents from "./components/newagents/NewAgents";
+import { Footer } from "./components/footer";
 
 function AboutUs() {
   return (
     <>
-      <NewsletterSubscription />
-      <NewAgents />
+
     </>
   );
 }
@@ -29,6 +27,8 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/catalogue" element={<Catalogue />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 }
