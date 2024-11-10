@@ -46,11 +46,10 @@ export const Home = () => {
       </div>
 
       {/* Container for the home section */}
-      <div className="home-top-row">
-        <h1 className="home-title">Aceros de la más alta calidad</h1>
-      </div>
       <div className="home-container">
+
         <div className="home-welcome">
+          <h1 className="home-title">Líderes en Aceros</h1>
           <h2 className="home-subtitle">Resistencia y durabilidad garantizada</h2>
           <div className="divider"></div>
           <p className="home-text">
@@ -59,6 +58,7 @@ export const Home = () => {
         </div>
 
         <div className="home-img-subgrid">
+        <h1 className="products-title">Productos</h1>
           <div className="flip-container">
             <div className="flipper">
               <div className="front">
