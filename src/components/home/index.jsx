@@ -4,6 +4,7 @@ import "./style.css";
 import SteelSheet from "../SteelSheet";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
+import { NavBar } from "../header";
 
 // Register ScrollTrigger plugin with gsap
 gsap.registerPlugin(ScrollTrigger);
@@ -36,6 +37,7 @@ export const Home = () => {
 
   return (
     <section id="home" className="home">
+      <NavBar />
       {/* Initial webpage mask animation */}
       <div className="init-baseline">
         <div className="init-title">

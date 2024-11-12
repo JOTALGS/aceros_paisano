@@ -6,8 +6,10 @@
   padding: 10px;
   padding-left: 15vw;
   padding-right: 20vw;
-  background-color: rgb(184, 8, 8);
+  background-color: rgb(160, 0, 0);
   z-index: 1;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
 }
 
 .container_header {

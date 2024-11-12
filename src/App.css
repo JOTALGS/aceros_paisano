@@ -106,6 +106,7 @@
 html,
 body {
   height: 100%;
+  background-color: #0e0e0e;
 }
 
 body {
@@ -113,7 +114,7 @@ body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: visible;
-  background-color: var(--bg-color);
+  background-color: #0e0e0e;
   color: var(--text-color);
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
