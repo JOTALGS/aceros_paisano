@@ -4,12 +4,10 @@ import "./App.css";
 import { NavBar } from "./components/header";
 import { Home } from "./components/home";
 import { About } from "./components/about"
+import { Catalogue } from "./components/catalogue"
 import { Footer } from "./components/footer";
 
 
-function Catalogue() {
-  return <h1>About Us Page</h1>;
-}
 
 function App() {
   return (

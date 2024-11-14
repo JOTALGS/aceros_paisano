@@ -1,38 +1,28 @@
-import React, { useEffect } from "react";
-import { gsap } from "gsap";
+import React, { useEffect, useState } from "react";
 import "./style.css";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Link } from "react-router-dom";
 import { NavBar } from "../header";
+import { Link } from "react-router-dom";
 
-// Register ScrollTrigger plugin with gsap
-gsap.registerPlugin(ScrollTrigger);
+import { gsap } from "gsap";
+import SteelSheet from "../SteelSheet";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+
+
 
 export const Home = () => {
-  useEffect(() => {
-    const followDiv = document.querySelector(".follow-div");
+  const { scrollYProgress } = useScroll();
+  const [isFixed, setIsFixed] = useState(null);
 
-    // Create a GSAP timeline for smoother control
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#home",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true,  // Smooth scrubbing
-        markers: false,  // Enable markers for debugging if necessary
-      },
-    });
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest > 0.28 ) {
+      setIsFixed(false); // Mark as fixed when scrollYProgress is between 0.177 and 0.73
+    } else {
+      setIsFixed(true); // Unmark fixed if scrollYProgress exceeds 0.73 or goes below 0.177
+    }
+    console.log("Page scroll: ", latest)
+  });
 
-    // Move the div from right (50%) to left (-50%)
-    tl.to(followDiv, {
-      xPercent: -200,  // Move 50% to the left first
-      duration: 1,    // Adjust this to control the speed of the animation
-    }).to(followDiv, {
-      xPercent: -110,   // Move 50% to the right
-      duration: 1,    // Adjust the same way here
-    });
-
-  }, []);
 
   return (
     <section id="home" className="home">
@@ -48,10 +38,56 @@ export const Home = () => {
 
       {/* Container for the home section */}
       <div className="home-container">
-        <div className="home-top-row">
-          
+        <div className="top">
+          <div className="home-top-row">
+            <div className="home-top-grid">
+              <div className="image-column image-left">
+                <img src="./images/aceros.jpg" alt="Left Image" />
+              </div>
+              <div className="content-column">
+
+              </div>
+              <div className="image-column image-right">
+                <img src="./images/paisano.jpg" alt="Right Image" />
+              </div>
+            </div>
+          </div>
         </div>
 
+        <div className="home-middle-row">
+          <div className="catalogue-section">
+            <h2 className="catalogue-title">Líderes en Aceros</h2>
+            <p className="catalogue-description">
+            Nuestra empresa es líder en la venta de acero en Uruguay.
+            Contamos con una amplia variedad de productos de acero, ofreciendo
+            soluciones para diferentes sectores como la construcción,
+            automotriz, la industria y la fabricación.
+            </p>
+            <div className="catalogue-button-wrapper">
+              <Link to={"/catalogue"} className="catalogue-button">
+                Explorar Catálogo
+              </Link>
+              <div className="catalogue-arrow">
+                <svg 
+                  className="arrow-icon" 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="16" 
+                  height="16" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  transform="rotate(-50)"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </div>
+            </div>
+          </div>
+        </div>
         
         <div className="home-bottom-row">
           <p>Buscanos en Google Maps</p>
@@ -67,12 +103,20 @@ export const Home = () => {
       </div>
       <div className="transparent-section"></div>
 
-      {/* 
-      Div that follows the viewport
-      <div className="follow-div">
+      {/* Div that follows the viewport */}
+      <motion.div
+        className="follow-div"
+          style={{
+            position: isFixed ? "fixed" : "absolute",
+            top: isFixed===null ? "10%" : isFixed ? "20%" : "28%", // Adjust fixed position
+            left: isFixed ? "50%" : "50%", // Center horizontally
+            zIndex: isFixed ? 10 : "auto",
+          }}
+        >
+
         <SteelSheet />
-      </div>
-       */}
+      </motion.div>
+
     </section>
   );
 };

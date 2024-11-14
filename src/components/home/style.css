@@ -30,6 +30,7 @@
   justify-content: center; /* Center items vertically */
   position: relative;
   padding: 30px;
+  padding-bottom: 0px;
   padding-top: 40px;
   height: 120vh;
   width: 100%;
@@ -38,23 +39,68 @@
   z-index: 0;
 }
 
-.home-top-row {
+.top {
   position: relative;
   margin: 10px;
-  width: 80vw;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}	
+
+.home-top-row {
+  position: relative;
+  width: 90vw;
   height: 40rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid white;
   border-radius: 150px;
+  background-color: rgb(0, 0, 0);
 }
-.home-top-row::after {
-  position: relative;
-  margin: 10px;
+
+
+.home-top-row::after, .home-top-row::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50.000%;
+  width: 100.16%;
+  height: 100%;
+  display: flex;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 85%, white 100%);
   border-radius: 150px;
-  background-color: aqua;
-  padding: 10px;
+  translate: -50% -50%;
+  z-index: -1;
+}
+
+.home-top-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr; /* 3 columns: first and last are images (smaller), middle is content */
+  grid-gap: 20px; /* Optional: space between columns */
+  align-items: center; /* Vertically align items in the center */
+}
+
+.image-column {
+  display: flex;
+  justify-content: center; /* Center images horizontally */
+  align-items: center; /* Center images vertically */
+}
+
+.image-column img {
+  width: auto;
+  height: 180px;
+}
+
+.content-column {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  padding: 20px; /* Optional: add some padding around the content */
+  background-color: #77020200; /* Optional: set a background color for the content */
 }
 
 
@@ -67,6 +113,7 @@
   width: 80%;
   border: 1px solid rgba(255, 187, 0, 0.356);
   border-bottom: transparent;
+  z-index: 1000;
 }
 .home-bottom-row>p {
   color: rgba(255, 187, 0, 0.74);
@@ -199,12 +246,95 @@
     top: 20%; /* Adjust as needed */
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1000; /* Make sure it's above other content */
+    z-index: -1000; /* Make sure it's above other content */
     padding: 10px 20px;
-    width: 50vw;
-    height: 50vh;
+    width: 20vw;
+    height: 70vh;
     background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
     color: white;
     border-radius: 8px;
     font-size: 1.2rem;
+    z-index: 0;
+  }
+
+  .home-middle-row {
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 80%, transparent);
+    padding: 10px 20px;
+    text-align: center;
+    align-items: center;
+    color: white;
+    height: 60%;
+    width: 95%;
+  }
+  .catalogue-section {
+    text-align: left;
+    padding: 20px;
+    width: 22vw;
+    background-color: transparent; /* Light background */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .catalogue-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #ffffff; /* Darker text for the title */
+  }
+  
+  .catalogue-description {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #555; /* Lighter text for the description */
+    line-height: 1.5;
+  }
+  
+  .catalogue-button-wrapper {
+    display: flex; /* Align text and arrow horizontally */
+    justify-content: start; /* Center-align the button wrapper */
+    align-items: center; /* Vertically center-align the content */
+    gap: 10px; /* Space between the text and the arrow */
+  }
+
+  .catalogue-button {
+    display: flex; /* Flex layout to position icon and text */
+    align-items: center; /* Vertically center icon and text */
+    justify-content: center; /* Center text and icon */
+    gap: 10px;
+    padding: 10px 20px;
+    font-size: 2rem;
+    color: #fff;
+    background-color: #ff0000; /* Primary blue color */
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .catalogue-button:hover {
+    background-color: transparent;
+    border-color: #ffffff;
+  }
+  
+  .arrow-icon {
+    width: 3.25rem; /* Scale relative to text size */
+    height: 3.25rem;
+  }
+  .catalogue-arrow {
+    display: flex; /* Flex layout to position icon and text */
+    align-items: center; /* Vertically center icon and text */
+    justify-content: center; /* Center text and icon */
+    gap: 10px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ff0000; /* Primary blue color */
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .catalogue-button:hover ~ .catalogue-arrow {
+    transform: scale(1.1) translateX(10px); /* Increase scale */
+    background-color: transparent;
+    border-color: #ffffff;
   }

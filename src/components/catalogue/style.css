@@ -1,0 +1,125 @@
+/* Overall container */
+.catalogue-container {
+    display: flex;
+    height: 190vh; /* Full height */
+    background-color: #f5f5f5; /* Light grey background */
+  }
+  
+  /* Filters Section */
+  .catalogue-filters {
+    width: 25vw;
+    padding: 20px;
+    background-color: #ffffff; /* White background for contrast */
+    border-right: 1px solid #ccc; /* Divider */
+    height: 190vh;
+  }
+  
+  .catalogue-filters h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .filters label {
+    margin: 10px 0;
+    color: #555;
+  }
+
+  .filters {
+    border: 1px solid #ccc;
+  }
+  
+  /* Products Section */
+  .catalogue-products {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  .view-toggle {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .view-toggle button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .view-toggle button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Products List */
+  .products-list {
+    display: grid;
+    gap: 20px;
+    width: 80%;
+    height: 2000px;
+  }
+  
+  .products-list.grid {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Grid layout */
+  }
+  
+  .products-list.list {
+    grid-template-columns: 1fr; /* Single column for list layout */
+  }
+  
+  /* Product Item */
+  .product-item {
+    background-color: transparent; /* Transparent background */
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .product-item img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .product-item.grid img {
+    height: 200px;
+  }
+  
+  .product-item.list {
+    flex-direction: row; /* Horizontal layout for list view */
+    align-items: center;
+  }
+  
+  .product-item.list img {
+    width: 100px; /* Thumbnail size */
+    height: 100px;
+    margin-right: 20px;
+  }
+  
+  .product-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-title {
+    font-size: 1.2rem;
+    color: red; /* Red title */
+    margin-bottom: 5px;
+  }
+  
+  .product-description {
+    font-size: 0.9rem;
+    color: grey; /* Grey description */
+    margin-bottom: 10px;
+  }
+  
+  .product-price {
+    font-size: 1rem;
+    color: black;
+  }
+  
