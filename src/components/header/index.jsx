@@ -31,25 +31,8 @@ export const NavBar = () => {
             <li>
               <Link to="/about-us">Sobre Nosotros</Link>
             </li>
-            <li className="dropdown" onClick={toggleDropdown}>
-              <span>Productos ▼</span>
-              <div className={`dropdown-content ${dropdownOpen ? "open" : ""}`}>
-                <li>
-                  <Link to="/catalogue/option1">Cortado y Doblado</Link>
-                </li>
-                <li>
-                  <Link to="/catalogue/option2">Malla Electrosoldada</Link>
-                </li>
-                <li>
-                  <Link to="/catalogue/option3">Barras Conformadas y Lisas</Link>
-                </li>
-                <li>
-                  <Link to="/catalogue/option4">Alambres Galvanizados</Link>
-                </li>
-                <li>
-                  <Link to="/catalogue/option5">Alambres Recocidos y Clavos</Link>
-                </li>
-              </div>
+            <li>
+              <Link to="/catalogue">Catalogo</Link>
             </li>
             <li>
               <Link to="/contact">Contacto</Link>

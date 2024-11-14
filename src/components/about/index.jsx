@@ -27,9 +27,9 @@ export const About = () => {
           className="image-content"
           style={{
             position: isFixed ? "fixed" : "",
-            top: isFixed ? "-100px" : "auto", // Adjust fixed position
-            left: isFixed ? "72.5%" : "auto", // Center horizontally
-            transform: isFixed ? "translateX(-50%)" : "none", // Center adjustment
+            top: isFixed ? "-150px" : "auto", // Adjust fixed position
+            left: isFixed ? "53.4%" : "auto", // Center horizontally
+            width: "450px",
             zIndex: isFixed ? 10 : "auto",
           }}
         >
@@ -43,9 +43,9 @@ export const About = () => {
           className="image-content"
           style={{
             position: isFixed ? "fixed" : "",
-            top: isFixed ? "-100px" : "auto", // Adjust fixed position
-            left: isFixed ? "72.5%" : "auto", // Center horizontally
-            transform: isFixed ? "translateX(-50%)" : "none", // Center adjustment
+            top: isFixed ? "-150px" : "auto", // Adjust fixed position
+            left: isFixed ? "53.4%" : "auto", // Center horizontally
+            width: "450px",
             zIndex: isFixed ? 10 : "auto",
           }}
         >
@@ -59,9 +59,9 @@ export const About = () => {
           className="image-content"
           style={{
             position: isFixed ? "fixed" : "",
-            top: isFixed ? "-100px" : "auto", // Adjust fixed position
-            left: isFixed ? "72.5%" : "auto", // Center horizontally
-            transform: isFixed ? "translateX(-50%)" : "none",
+            top: isFixed ? "-150px" : "auto", // Adjust fixed position
+            left: isFixed ? "53.4%" : "auto", // Center horizontally
+            width: "450px",
             zIndex: isFixed ? 10 : "auto",
           }}
         >

@@ -35,7 +35,7 @@
 
 .image-content {
     width: 50%; /* Take the right half */
-    right: 0; /* Position at the right edge */
+    right: 20%; /* Position at the right edge */
     text-align: center;
     display: flex; /* Center content vertically and horizontally */
     justify-content: start;
@@ -44,8 +44,9 @@
 }
 
 .image-content img {
-    max-width: 40%; /* Responsive image scaling */
-    max-height: 80%;
+    width: 450px;
     border-radius: 20px;
     object-fit: cover;
+    transition: all 1s ease-in-out;
+    position: absolute;
 }

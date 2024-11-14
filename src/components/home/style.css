@@ -6,9 +6,9 @@
   background-size: cover; /* Make the background cover the whole area */
   z-index: 1;
   animation: changeZIndex 0s ease-in 3s forwards;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-top: 10px;
+
+
 
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
@@ -24,156 +24,47 @@
 
 
 .home-container {
-  display: grid;
-  grid-template-columns: 1fr 5fr 5fr 1fr;
-  grid-template-rows: auto 1fr;
-  grid-gap: 10px;
+  display: flex; /* Change to flexbox */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
   position: relative;
-  padding: 20px;
-  padding-top: 10px;
+  padding: 30px;
+  padding-top: 40px;
   height: 120vh;
   width: 100%;
   text-align: center;
-  background: radial-gradient(circle at center bottom, rgba(97, 97, 97, 0.712), rgb(160, 0, 0) 50%);
-  transform: translateY(-10%);
-  animation: showTitle 3s ease 4s forwards;
-  border-radius: 50px;
-  z-index: 1;
+  background: rgb(0, 0, 0);
+  z-index: 0;
 }
 
-.home-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Makes sure the overlay doesn’t interfere with interactions */
-  z-index: -1; /* Ensures the overlay is above the background but below other content */
-}
-
-
-@keyframes showTitle {
-  0% {
-    transform: translateY(-10%);
-    border-radius: 50px;
-  }
-  100% {
-    transform: translateY(0);
-    border-radius: 0px;
-  }
-}
-
-
-.home-welcome {
-  grid-column: 2 / 3; /* Places .home-welcome in the second column */
-  color: white; /* Optional: Text color for better visibility */
-  background-color: rgb(0, 0, 0);
-  padding: 60px;
-}
-
-.home-img-subgrid {
-  display: grid;
-  height: 450px;
-  background-color: rgb(68, 68, 68);
-  grid-template-columns: repeat(3, 1fr); /* 2 columns */
-  grid-template-rows: repeat(2, auto); /* 3 rows */
-  gap: 0px;
-  perspective: 1000px; /* Enable 3D effect */
-  transform: translateY(40%) translateX(-10%);
-  padding: 5px;
-  padding-top: 30px;
-}
-.products-title{
-  position: absolute;
-  font-size: 2rem;
-  top: 1%;
-  left: 44%;
-}
-
-.flip-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  perspective: 1000px;
-}
-
-.flipper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.8s ease;
-}
-
-.front, .back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 10%;
-  backface-visibility: hidden;
-}
-
-.front {
-  z-index: 2; /* Make sure the front side is visible first */
-}
-
-.back {
-  top: 0%;
-  left: 5%;
-  transform: rotateY(180deg); /* Initially rotate the back side */
-  background-color: rgb(184, 8, 8);
-  width: 90%;
-  height: 100px;
-  margin-top: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1.5rem;
-}
-
-.flip-container:hover .flipper {
-  transform: rotateY(180deg); /* Rotate the entire flipper when hovering */
-}
-
-.home-img-subgrid img {
-  width: 90%;
-  height: auto;
-  object-fit: cover;
-}
-
-.home-subtitle{
-  font-size: 2.5rem;
-  color: white;
-}
-.home-text {
-  font-size: 1.5rem;
-  color: white;
-}
 .home-top-row {
-  align-self: center;
-  text-align: center;
-  background-color: rgb(37, 37, 37);
+  position: relative;
+  margin: 10px;
+  width: 80vw;
+  height: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 150px;
 }
-.home-title{
-  font-size: 5rem;
-  letter-spacing: 2px;
-  font-weight: bold;
-  color: rgba(255, 187, 0, 0.74);
-  z-index: 1000;
-  opacity: 0.9;
-  filter: brightness(5rem);
+.home-top-row::after {
+  position: relative;
+  margin: 10px;
+  border-radius: 150px;
+  background-color: aqua;
+  padding: 10px;
 }
+
+
 .home-bottom-row {
-  grid-column: 1 / 5; /* Spans across all four columns */
-  grid-row: 2; /* Places it in the second row */
   background: linear-gradient(to bottom, rgb(0, 0, 0) 80%, transparent);
   padding: 10px 20px;
   text-align: center;
   color: white;
   height: 60%;
-  align-self: end;
+  width: 80%;
   border: 1px solid rgba(255, 187, 0, 0.356);
   border-bottom: transparent;
 }
