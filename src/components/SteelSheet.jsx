@@ -14,7 +14,7 @@ function Model(props) {
     useEffect(() => {
       // Create the GSAP animation for rotation and scale
       gsap.to(groupRef.current.rotation, {
-        x: Math.PI /1.5 , // Rotate a full circle on the x-axis
+        x: Math.PI / 1.5 , // Rotate a full circle on the x-axis
         scrollTrigger: {
           trigger: '#model-canvas', // The canvas container
           start: 'top top',  // When the top of the canvas hits the top of the viewport
