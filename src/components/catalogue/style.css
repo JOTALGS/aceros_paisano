@@ -1,7 +1,7 @@
 /* Overall container */
 .catalogue-container {
     display: flex;
-    height: 190vh; /* Full height */
+    height: fit-content; /* Full height */
     background-color: #f5f5f5; /* Light grey background */
   }
   
@@ -11,7 +11,7 @@
     padding: 20px;
     background-color: #ffffff; /* White background for contrast */
     border-right: 1px solid #ccc; /* Divider */
-    height: 190vh;
+    height: full;
   }
   
   .catalogue-filters h2 {
