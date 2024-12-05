@@ -1,52 +1,95 @@
-.about {
-    height: 500vh;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
+@font-face {
+    font-family: "PPObjectSans";
+    src: url("./fonts/PPObjectSans-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
 }
 
-.intro-about {
-    width: 100%;
-    height: 500px;
+.about {
+    background: #000000;
+    color: white;
+    padding: 40px 20px;
+    font-family: "PPObjectSans", Arial, sans-serif; /* Usamos la misma fuente para todo */
+    text-transform: uppercase; /* Aseguramos que todos los textos estén en mayúsculas */
 }
 
 .about-sub-section {
-    position: relative; /* To serve as a reference for absolute positioning */
-    width: 100%;
-    height: 100vh;
-    margin: 0 auto;
-}
-
-.text-content, .image-content {
-    position: absolute; /* Absolutely position within the sub-section */
-    top: 0; /* Align at the top */
-    height: 100%; /* Stretch to full height of the sub-section */
+    margin: 100px auto; /* Aumenta el espacio entre secciones */
+    display: flex;
+    flex-direction: column;
 }
 
 .text-content {
-    width: 50%; /* Take the left half */
-    left: 0; /* Position at the left edge */
-    text-align: left;
-    padding: 20px; /* Optional: Add padding for spacing */
-    display: flex; /* Center content vertically and horizontally */
-    justify-content: center;
-    align-items: center;
+    text-align: justify; /* Justificar texto */
+    font-size: 28px; /* Aumento del tamaño de la fuente */
+}
+
+.text-content.left {
+    align-self: flex-start;
+}
+
+.text-content.right {
+    align-self: flex-end;
+}
+
+.subtitle {
+    font-size: 32px; /* Tamaño aumentado de los subtítulos */
+    font-weight: bold;
+    margin-bottom: 5px; /* Más espacio debajo del subtítulo */
+    text-transform: uppercase; /* Subtítulos en mayúscula */
+    font-family: "PPObjectSans", Arial, sans-serif; /* Aseguramos que los subtítulos usen la misma fuente */
+}
+
+.highlighted-text {
+    font-size: 24px; /* Aumento del tamaño del texto */
+    line-height: 1.6; /* Aumento del espacio entre líneas */
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.5s;
+    text-transform: uppercase; /* Aseguramos que los textos dentro de highlighted-text estén en mayúsculas */
+}
+
+/* Acortando el ancho máximo para mejorar legibilidad */
+.highlighted-text {
+   max-width: 600px; /* Ajusta este valor según sea necesario */
+   margin-left:auto;
+   margin-right:auto;
+}
+
+.highlighted-text.active {
+    color: rgb(255, 255, 255); /* Efecto de color al hacer scroll */
 }
 
 .image-content {
-    width: 50%; /* Take the right half */
-    right: 20%; /* Position at the right edge */
-    text-align: center;
-    display: flex; /* Center content vertically and horizontally */
-    justify-content: start;
-    margin-right: 40px;
-    align-items: center;
+    display: none; /* Quitamos las imágenes */
 }
 
-.image-content img {
-    width: 450px;
-    border-radius: 20px;
-    object-fit: cover;
-    transition: all 1s ease-in-out;
-    position: absolute;
+.navbar {
+    background: #000000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Efectos de Scroll para resaltar el texto */
+.about-sub-section .highlighted-text.active {
+    color: rgba(255, 255, 255, 1); /* Cambiar color al hacer scroll */
+}
+
+/* Animaciones adicionales para el texto al hacer scroll */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar animación fadeIn en los textos */
+.highlighted-text {
+    animation: fadeIn 1s ease-out;
 }
