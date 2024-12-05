@@ -101,8 +101,8 @@ export function Catalogue() {
         {/* Scrollable Products Section */}
         <div className="catalogue-products">
             <div className="view-toggle">
-            <button onClick={() => setViewMode('grid')}>Grid View</button>
-            <button onClick={() => setViewMode('list')}>List View</button>
+              <button onClick={() => setViewMode('grid')}>Grid View</button>
+              <button onClick={() => setViewMode('list')}>List View</button>
             </div>
             <div className={`products-list ${viewMode}`}>
             {products.map((product) => (
