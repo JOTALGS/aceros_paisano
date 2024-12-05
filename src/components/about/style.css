@@ -8,7 +8,7 @@
 .about {
     background: #000000;
     color: white;
-    padding: 40px 20px;
+    padding: 40px 100px;
     font-family: "PPObjectSans", Arial, sans-serif; /* Usamos la misma fuente para todo */
     text-transform: uppercase; /* Aseguramos que todos los textos estén en mayúsculas */
 }

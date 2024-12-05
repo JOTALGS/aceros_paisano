@@ -10,12 +10,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const About = () => {
   const { scrollYProgress } = useScroll();
-  const textRefs = useRef([]);
+  const textRefs = useRef([]); // Array to hold refs for all paragraphs
 
   // Setup gsap scroll animations inside useEffect hook
   useEffect(() => {
-    textRefs.current = textRefs.current.slice(0, 10); // Limit refs to the number of elements
-
     textRefs.current.forEach((ref) => {
       if (ref) {
         // ScrollTrigger animation setup for each text element
@@ -28,7 +26,9 @@ export const About = () => {
           {
             opacity: 1, // Fade in to full opacity
             y: 0, // Move to normal position
-            duration: 2,
+            color: "#d6d6d6",
+            duration: 4,
+            delay: 1.5,
             ease: "power4.out", // Smooth easing
             scrollTrigger: {
               trigger: ref, // Element to trigger the animation
@@ -83,6 +83,8 @@ export const About = () => {
     },
   ];
 
+  let globalIndex = 0; // Global counter for refs
+
   return (
     <section id="about" className="about">
       <NavBar />
@@ -93,10 +95,10 @@ export const About = () => {
           <div className={`text-content ${index % 2 === 0 ? "left" : "right"}`}>
             <div>
               <h2 className="subtitle">{section.title}</h2>
-              {section.paragraphs.map((para, i) => (
+              {section.paragraphs.map((para) => (
                 <p
-                  key={i}
-                  ref={(el) => (textRefs.current[index * section.paragraphs.length + i] = el)}
+                  key={globalIndex}
+                  ref={(el) => (textRefs.current[globalIndex++] = el)}
                   className="highlighted-text"
                 >
                   {para}
