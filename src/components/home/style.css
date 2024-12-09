@@ -2,7 +2,6 @@
 .home {
   position: relative;
   min-height: 100vh;
-  background: url('/images/paisanoim1.png') no-repeat center center fixed; /* Fixed background */
   background-size: cover; /* Make the background cover the whole area */
   z-index: 1;
   animation: changeZIndex 0s ease-in 3s forwards;
@@ -33,6 +32,7 @@
   padding-bottom: 0px;
   padding-top: 40px;
   height: fit-content;
+  min-height: 1400px;
   width: 100%;
   text-align: center;
   background: rgb(0, 0, 0);
@@ -105,24 +105,46 @@
 
 
 .home-bottom-row {
-  background: linear-gradient(to bottom, rgb(0, 0, 0) 80%, transparent);
+  position: relative;
+  display: flex;
+  background: linear-gradient(to bottom, white 60%, rgba(255, 255, 255, 0) 85%);
   padding: 10px 20px;
   text-align: center;
   color: white;
-  height: 60%;
+  height: 80%;
+  margin-top: 150px;
+  min-height: 300px;
   width: 80%;
-  border: 1px solid rgba(255, 187, 0, 0.356);
-  border-bottom: transparent;
+  border-radius: 50px;
   z-index: 1000;
+  
+  padding: 50px;
+  
 }
+.home-bottom-row::after, .home-bottom-row::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50.001%;
+  width: 99.9%;
+  height: 99.5%;
+  display: flex;
+  background: rgb(0, 0, 0);
+  border-radius: 50px;
+  translate: -50% -50%;
+  z-index: -1000;
+}
+ 
 .home-bottom-row>p {
-  color: rgba(255, 187, 0, 0.74);
+  color: rgb(255, 255, 255);
   font-size: 2rem;
+  margin: 0px 30px;
 }
 
 .map{
-  width: 70%;
-  height: 70%;
+  width: 35%;
+  height: 50%;
+  min-height: 205px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
 }
 
@@ -248,7 +270,7 @@
     transform: translateX(-50%);
     z-index: -1000; /* Make sure it's above other content */
     padding: 10px 20px;
-    width: 20vw;
+    width: 30vw;
     height: 70vh;
     background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
     color: white;

@@ -7,6 +7,18 @@
     margin-left: 20px;
     margin-right: 20px;
   }
+
+.foot-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+.foot-image img {
+    height: 70vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
   
   .footer-container {
     display: flex;

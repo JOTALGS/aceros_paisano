@@ -90,7 +90,6 @@ export const Home = () => {
         </div>
         
         <div className="home-bottom-row">
-          <p>Buscanos en Google Maps</p>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d410.0220973319345!2d-56.2392878!3d-34.7007209!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a1cd0dee1b74d7%3A0x9d3355e7c66adcd2!2sAcerospaisano%20S.A.!5e0!3m2!1ses!2suy!4v1730815336951!5m2!1ses!2suy"
             allowfullscreen=""
@@ -99,18 +98,18 @@ export const Home = () => {
             className="map"
           > 
           </iframe>
+          <p>Buscanos en Google Maps</p>
         </div>
       </div>
-      <div className="transparent-section"></div>
 
       {/* Div that follows the viewport */}
       <motion.div
         className="follow-div"
           style={{
             position: isFixed ? "fixed" : "absolute",
-            top: isFixed===null ? "10%" : isFixed ? "20%" : "28%", // Adjust fixed position
+            top: isFixed===null ? "8%" : isFixed ? "18%" : "40%", 
             left: isFixed ? "50%" : "50%", // Center horizontally
-            zIndex: isFixed ? 10 : "auto",
+            zIndex: isFixed ? 10 : "0",
           }}
         >
 
