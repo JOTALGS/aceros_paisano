@@ -7,6 +7,7 @@ import { gsap } from "gsap";
 import SteelSheet from "../SteelSheet";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import ButtonHoverBg from "../CustomButton/ButtonHoverBg";
 
 
 
@@ -56,12 +57,8 @@ export const Home = () => {
 
         <div className="home-middle-row">
           <div className="catalogue-section">
-            <h2 className="catalogue-title">Líderes en Aceros</h2>
             <p className="catalogue-description">
             Nuestra empresa es líder en la venta de acero en Uruguay.
-            Contamos con una amplia variedad de productos de acero, ofreciendo
-            soluciones para diferentes sectores como la construcción,
-            automotriz, la industria y la fabricación.
             </p>
             <div className="catalogue-button-wrapper">
               <Link to={"/catalogue"} className="catalogue-button">
@@ -79,7 +76,7 @@ export const Home = () => {
                   strokeWidth="2" 
                   strokeLinecap="round" 
                   strokeLinejoin="round"
-                  transform="rotate(-50)"
+                  transform="rotate(-45)"
                 >
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
@@ -90,15 +87,18 @@ export const Home = () => {
         </div>
         
         <div className="home-bottom-row">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d410.0220973319345!2d-56.2392878!3d-34.7007209!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a1cd0dee1b74d7%3A0x9d3355e7c66adcd2!2sAcerospaisano%20S.A.!5e0!3m2!1ses!2suy!4v1730815336951!5m2!1ses!2suy"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            className="map"
-          > 
-          </iframe>
-          <p>Buscanos en Google Maps</p>
+          <div className="about-intro">
+          <h2 className="catalogue-title">Líderes en Aceros</h2>
+              <p className="about-description">
+                Nuestra empresa es líder en la venta de acero en Uruguay.
+                Contamos con una amplia variedad de productos de acero, ofreciendo
+                soluciones para diferentes sectores como la construcción,
+                automotriz, la industria y la fabricación.
+              </p>
+              <Link to={"/about"} >
+                <ButtonHoverBg label="Sobre Nosotros" buttonStyles={"about-link-button"}/>
+              </Link>
+          </div>
         </div>
       </div>
 
@@ -112,8 +112,8 @@ export const Home = () => {
             zIndex: isFixed ? 10 : "0",
           }}
         >
-
-        <SteelSheet />
+        {/* <SteelSheet /> */}
+        
       </motion.div>
 
     </section>

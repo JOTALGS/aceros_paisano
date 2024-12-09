@@ -90,53 +90,31 @@ export const About = () => {
       <NavBar />
       <div className="intro-about"></div>
 
-      <div className="about-sub-section">
-        <div className="text-content">¿Quiénes somos?</div>
-        <motion.div
-          className="image-content"
-          style={{
-            position: isFixed ? "fixed" : "",
-            top: isFixed ? "-150px" : "auto", // Adjust fixed position
-            left: isFixed ? "53.4%" : "auto", // Center horizontally
-            width: "450px",
-            zIndex: isFixed ? 10 : "auto",
-          }}
-        >
-          <img src="./images/about1.png" alt="About us" />
-        </motion.div>
-      </div>
+      {content.map((section, index) => (
+        <div className="about-sub-section" key={index}>
+          <div className={`text-content ${index % 2 === 0 ? "left" : "right"}`}>
+            <div>
+              <h2 className="subtitle">{section.title}</h2>
+              {section.paragraphs.map((para) => (
+                <p
+                  key={globalIndex}
+                  ref={(el) => (textRefs.current[globalIndex++] = el)}
+                  className="highlighted-text"
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
 
-      <div className="about-sub-section">
-        <div className="text-content">¿Qué hacemos?</div>
-        <motion.div
-          className="image-content"
-          style={{
-            position: isFixed ? "fixed" : "",
-            top: isFixed ? "-150px" : "auto", // Adjust fixed position
-            left: isFixed ? "53.4%" : "auto", // Center horizontally
-            width: "450px",
-            zIndex: isFixed ? 10 : "auto",
-          }}
-        >
-          <img src="./images/about1.png" alt="About us" />
-        </motion.div>
-      </div>
-
-      <div className="about-sub-section">
-        <div className="text-content">¿Dónde estamos?</div>
-        <motion.div
-          className="image-content"
-          style={{
-            position: isFixed ? "fixed" : "",
-            top: isFixed ? "-150px" : "auto", // Adjust fixed position
-            left: isFixed ? "53.4%" : "auto", // Center horizontally
-            width: "450px",
-            zIndex: isFixed ? 10 : "auto",
-          }}
-        >
-          <img src="./images/about1.png" alt="Our location" />
-        </motion.div>
-      </div>
+      {/* Footer at the bottom of the page */}
+      <footer className="footer">
+        <div className="footer-content">
+          <p>© {new Date().getFullYear()} Nombre de la Empresa. Todos los derechos reservados.</p>
+        </div>
+      </footer>
     </section>
   );
 };
