@@ -58,43 +58,25 @@ export const Home = () => {
         <div className="home-middle-row">
           <div className="catalogue-section">
             <p className="catalogue-description">
-            Nuestra empresa es líder en la venta de acero en Uruguay.
+            Hablamos de la mejor calidad y precisión. 
+            La calidad no es negociable.
             </p>
             <div className="catalogue-button-wrapper">
               <Link to={"/catalogue"} className="catalogue-button">
-                Explorar Catálogo
+                Explorar Productos
               </Link>
-              <div className="catalogue-arrow">
-                <svg 
-                  className="arrow-icon" 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="16" 
-                  height="16" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                  transform="rotate(-45)"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </div>
             </div>
           </div>
         </div>
         
         <div className="home-bottom-row">
           <div className="about-intro">
-          <h2 className="catalogue-title">Líderes en Aceros</h2>
-              <p className="about-description">
-                Nuestra empresa es líder en la venta de acero en Uruguay.
-                Contamos con una amplia variedad de productos de acero, ofreciendo
-                soluciones para diferentes sectores como la construcción,
-                automotriz, la industria y la fabricación.
-              </p>
+          <p className="about-description">
+              NUESTRA EMPRESA ES LÍDER EN LA VENTA DE ACERO EN URUGUAY.
+              CONTAMOS CON UNA AMPLIA VARIEDAD DE PRODUCTOS DE ACERO, OFRECIENDO
+              SOLUCIONES PARA DIFERENTES SECTORES COMO LA CONSTRUCCIÓN,
+              AUTOMOTRIZ, LA INDUSTRIA Y LA FABRICACIÓN.
+            </p>
               <Link to={"/about"} >
                 <ButtonHoverBg label="Sobre Nosotros" buttonStyles={"about-link-button"}/>
               </Link>
