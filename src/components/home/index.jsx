@@ -9,21 +9,41 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import ButtonHoverBg from "../CustomButton/ButtonHoverBg";
 
-
+gsap.registerPlugin(ScrollTrigger);
 
 export const Home = () => {
   const { scrollYProgress } = useScroll();
-  const [isFixed, setIsFixed] = useState(null);
+  const [isFixed, setIsFixed] = useState(true);
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest > 0.28 ) {
-      setIsFixed(false); // Mark as fixed when scrollYProgress is between 0.177 and 0.73
+    if (latest > 0.1) {
+      setIsFixed(false);
     } else {
-      setIsFixed(true); // Unmark fixed if scrollYProgress exceeds 0.73 or goes below 0.177
+      setIsFixed(true);
     }
-    console.log("Page scroll: ", latest)
+    console.log("Page scroll: ", latest);
   });
 
+  useEffect(() => {
+    const lines = gsap.utils.toArray(".about-description span");
+
+    gsap.set(lines, { opacity: 0, y: 30 });
+
+    lines.forEach((line, index) => {
+      gsap.to(line, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: line,
+          start: "top 80%",
+          end: "top 50%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    });
+  }, []);
 
   return (
     <section id="home" className="home">
@@ -33,8 +53,7 @@ export const Home = () => {
         <div className="init-title">
           <img src="./images/titulo.jpg" alt="title" className="img-title" />
         </div>
-        <div className="baseline-start">
-        </div>
+        <div className="baseline-start"></div>
       </div>
 
       {/* Container for the home section */}
@@ -45,9 +64,7 @@ export const Home = () => {
               <div className="image-column image-left">
                 <img src="./images/aceros.jpg" alt="Left Image" />
               </div>
-              <div className="content-column">
-
-              </div>
+              <div className="content-column"></div>
               <div className="image-column image-right">
                 <img src="./images/paisano.jpg" alt="Right Image" />
               </div>
@@ -58,28 +75,28 @@ export const Home = () => {
         <div className="home-middle-row">
           <div className="catalogue-section">
             <p className="catalogue-description">
-            Hablamos de la mejor calidad y precisión. 
-            La calidad no es negociable.
+              Hablamos de la mejor calidad y precisión. La calidad no es negociable.
             </p>
             <div className="catalogue-button-wrapper">
-              <Link to={"/catalogue"} className="catalogue-button">
-                Explorar Productos
+              <Link to={"/catalogue"}>
+                <ButtonHoverBg label="Explorar Productos" buttonStyles={"catalogue-button"} />
               </Link>
             </div>
           </div>
         </div>
-        
+
         <div className="home-bottom-row">
           <div className="about-intro">
-          <p className="about-description">
-              NUESTRA EMPRESA ES LÍDER EN LA VENTA DE ACERO EN URUGUAY.
-              CONTAMOS CON UNA AMPLIA VARIEDAD DE PRODUCTOS DE ACERO, OFRECIENDO
-              SOLUCIONES PARA DIFERENTES SECTORES COMO LA CONSTRUCCIÓN,
-              AUTOMOTRIZ, LA INDUSTRIA Y LA FABRICACIÓN.
+            <p className="about-description">
+              {"Nuestra empresa es líder en la venta de acero en Uruguay. Contamos con una amplia variedad de productos de acero, ofreciendo soluciones para diferentes sectores como la construcción, automotriz, la industria y la fabricación.".split(" ").map((word, index) => (
+                <span key={index} style={{ display: "inline-block" }}>
+                  {word}&nbsp;
+                </span>
+              ))}
             </p>
-              <Link to={"/about"} >
-                <ButtonHoverBg label="Sobre Nosotros" buttonStyles={"about-link-button"}/>
-              </Link>
+            <Link to={"/about"}>
+              <ButtonHoverBg label="Sobre Nosotros" buttonStyles={"about-link-button"} />
+            </Link>
           </div>
         </div>
       </div>
@@ -87,17 +104,18 @@ export const Home = () => {
       {/* Div that follows the viewport */}
       <motion.div
         className="follow-div"
-          style={{
-            position: isFixed ? "fixed" : "absolute",
-            top: isFixed===null ? "8%" : isFixed ? "18%" : "40%", 
-            left: isFixed ? "50%" : "50%", // Center horizontally
-            zIndex: isFixed ? 10 : "0",
-          }}
-        >
-        {/* <SteelSheet /> */}
-        
-      </motion.div>
+        style={{
+          position: isFixed ? "fixed" : "absolute",
+          top: isFixed === null ? "8%" : isFixed ? "18%" : "40%",
+          left: isFixed ? "50%" : "50%", // Center horizontally
+          zIndex: isFixed ? 10 : "0",
+        }}
+      ></motion.div>
 
+      {/* Indicador de desplazamiento */}
+      {showScrollIndicator && (
+        <div className={`scroll-indicator`}>Desliza para descubrir</div>
+      )}
     </section>
   );
 };
