@@ -4,9 +4,6 @@ import "./style.css";
 export const Footer = () => {
   return (
     <section>
-      <div className="foot-image">
-        <img src="./images/paisanoim1.png" alt="Paisano logo" />
-      </div>
       <footer className="site-footer">
         <div className="footer-container">
           {/* Left side image */}

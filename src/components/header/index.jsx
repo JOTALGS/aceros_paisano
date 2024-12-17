@@ -18,7 +18,7 @@ export const NavBar = () => {
     <header className="site__header">
       <div className="container_header">
         <div className="logo-container">
-          <img src="./images/paisanologo.png" alt="red logo" />
+          <img src="./faviconBlack.ico" alt="red logo" />
         </div>
         <button className="hamburger" aria-label="Toggle navigation" onClick={toggleMenu}>
           &#9776;

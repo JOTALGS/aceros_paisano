@@ -25,7 +25,7 @@
   align-items: center; /* Center items horizontally */
   justify-content: center; /* Center items vertically */
   position: relative;
-  padding: 30px;
+  padding-right: 30px;
   padding-bottom: 0px;
   padding-top: 40px;
   height: fit-content;
@@ -53,50 +53,34 @@
   width: 90vw;
   height: 30rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
   border-radius: 80px;
   background-color: rgb(0, 0, 0);
 }
 
-.home-top-row::after, .home-top-row::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50.000%;
-  width: 100.16%;
-  height: 100%;
-  display: flex;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0) 95%, white 100%);
-  border-radius: 80px;
-  translate: -50% -50%;
-  z-index: -100;
-}
-
 .home-top-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 2fr; /* 3 columns: first and last are images (smaller), middle is content */
-  grid-gap: 20px; /* Optional: space between columns */
-  align-items: center; /* Vertically align items in the center */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  transform: translateX(-50px);
 }
 
 .image-column {
   display: flex;
-  justify-content: center; /* Center images horizontally */
-  align-items: center; /* Center images vertically */
+  justify-content: center;
+  align-items: center;
+}
+
+.image-right {
+  transform: translateY(-50px);
 }
 
 .image-column img {
   width: auto;
   height: 180px;
-}
-
-.content-column {
-  display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  padding: 20px; /* Optional: add some padding around the content */
-  background-color: #00000000; /* Optional: set a background color for the content */
 }
 
 .home-bottom-row {
@@ -282,12 +266,12 @@
   .home-middle-row {
     background: linear-gradient(to bottom, rgb(0, 0, 0) 80%, transparent);
     padding: 10px 20px;
-    padding-top: 150px;
+    padding-top: 100px;
     text-align: center;
     align-items: center;
     color: white;
     height: 100%;
-    width: 95%;
+    width: 100%;
     position: relative;
     top: calc(15vh - 100px);
   }
@@ -296,8 +280,7 @@
     text-align: left;
     padding: 20px;
     width: 20vw;
-     margin-left: -5%; /* Move section to the left */
-    background-color: transparent; /* Light background */
+    background-color: transparent;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -328,8 +311,8 @@
   }
   
   .catalogue-button:hover {
-    background-color: transparent;
-    border-color: #ffffff;
+    background-color: #ffffff;
+    transition-delay: 0.3s; 
   }
 
   /* Importación de la fuente PPObjectSans */
@@ -358,11 +341,11 @@ p {
 }
 
 .scroll-indicator {
-  position: fixed;
-  bottom: 20px; /* Ajusta según sea necesario */
-  right: 20px; /* Ajusta según sea necesario */
-  padding: 10px 15px; /* Espaciado interno */
-  border-: 5px; /* Bordes redondeados */
-  font-size: 16px; /* Tamaño de fuente */
-  color: #ffffff; /* Color del texto */
+  padding: 10px 15px;
+  font-size: 16px; 
+  color: #ffffff;
+  display: grid;
+  text-align: end;
+  align-self: flex-end;
+  justify-self: end;
 }

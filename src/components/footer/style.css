@@ -45,5 +45,26 @@
   .contact-info, .contact-details {
     display: flex;
     flex-direction: column;
+    transition: all 0.3s ease;
   }
   
+.contact-details p:not(:first-child):hover,
+.contact-details a:hover {
+  position: relative;
+  cursor: pointer;
+}
+
+.contact-details p:not(:first-child)::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #ff0000;
+  transition: width 0.2s ease-in-out;
+}
+
+.contact-details p:not(:first-child):hover::after{
+  width: 40%;
+}
